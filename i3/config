@@ -1,0 +1,94 @@
+# _____i3 CONFIG FILE_____ {{{
+
+
+# mod
+set $mod Mod4
+floating_modifier $mod
+
+# font
+font pango:DejaVu Sans Mono 9
+
+# window border
+new_window none
+#for_window [class="^.*"] border pixel 0
+#gaps inner 5
+#gaps outer 0
+
+# wireless
+exec --no-startup-id nm-applet
+# keyboard
+#exec --no-startup-id "setxkbmap -model pc105 -layout us -variant ninfpy"
+
+# wallpaper
+#exec --no-startup-id "feh --bg-scale $HOME/Pictures/Wallpapers/neovimw.png"
+
+# status bar
+bar {
+  status_command i3status
+  position bottom
+}
+
+# ___Modes___ {{{
+
+# }}}
+
+
+# ___Keybind___ {{{
+
+#Mod1 ("Alt" or "Meta")
+#Mod2 ("NumLock")
+#Mod4 ("Super"")
+#Shift
+#Control
+#Mode_Switch
+
+bindsym $mod+Shift+x kill
+bindsym $mod+e exec dmenu_run
+bindsym $mod+Return exec i3-sensible-terminal -e tmux
+bindsym $mod+j exec nautilus
+bindsym $mod+r exec i3-sensible-terminal -e ranger
+#bindsym $mod+x exec pavucontrol
+bindsym $mod+w exec --no-startup-id google-chrome
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+a fullscreen toggle
+bindsym $mod+i layout stacking
+bindsym $mod+y layout tabbed
+bindsym $mod+o layout toggle split
+
+bindsym $mod+f split h
+bindsym $mod+q split v
+bindsym $mod+h focus down
+bindsym $mod+n focus up
+bindsym $mod+s focus left
+bindsym $mod+l focus right
+bindsym $mod+Shift+p move down
+bindsym $mod+Shift+r move up
+bindsym $mod+Shift+c move left
+bindsym $mod+Shift+k move right
+bindsym $mod+Shift+h resize grow height 5 px
+bindsym $mod+Shift+n resize shrink height 5 px
+bindsym $mod+Shift+s resize grow width 5 px
+bindsym $mod+Shift+l resize shrink width 5 px
+bindsym Control+Mod1+h workspace 1
+bindsym Control+Mod1+n workspace 2
+bindsym Control+Mod1+s workspace 3
+bindsym Control+Mod1+l workspace 4
+bindsym Control+Mod1+p move workspace 1
+bindsym Control+Mod1+r move workspace 2
+bindsym Control+Mod1+c move workspace 3
+bindsym Control+Mod1+k move workspace 4
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+bindsym $mod+Shift+e exec --no-startup-id \
+        "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'suspend' 'systemctl suspend' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
+
+#}}}
+
+
+# }}}

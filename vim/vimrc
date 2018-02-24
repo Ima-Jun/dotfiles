@@ -1,0 +1,48 @@
+" Options
+set helplang=ja,en
+set noswapfile
+set encoding=utf8
+set undofile
+set undodir=$HOME/.vimundo
+set display=lastline
+set history=500
+set updatetime=1000
+set scrolloff=200
+set showmatch
+set matchtime=1
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set nohlsearch
+set ignorecase
+set shortmess+=I
+set timeoutlen=400
+"set colorcolumn=80
+set guicursor=a:blinkon0
+
+
+" Keyma
+noremap  h                j
+noremap  n                k
+noremap  s                h
+noremap  k                s
+noremap  j                n
+noremap  <C-w>h           <C-w>j
+noremap  <C-w>n           <C-w>k
+noremap  <C-w>s           <C-w>h
+noremap  <C-w>H           <C-w>J
+noremap  <C-w>N           <C-w>K
+noremap  <C-w>S           <C-w>H
+nnoremap <Space>a         $
+nnoremap <Space>e         ^
+nnoremap <Space>i         %
+nnoremap <F8>             :w<CR>
+nnoremap <F9>             :wv<CR>
+nnoremap <F10>            :rv<CR>
+nnoremap <tab>            >>
+vnoremap <tab>            >
+nnoremap <silent><Space>b :set           hlsearch!<CR>
+nnoremap <silent><F4>     :<C-u>setlocal number!<CR>
+nnoremap <silent><F3>     :<C-u>setlocal relativenumber!<CR>

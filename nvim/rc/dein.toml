@@ -1,0 +1,68 @@
+# ___DEINTOML___ {{{
+
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+#[[plugins]]
+#repo = 'equalsraf/neovim-gui-shim'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_keys = 'uieahnsl'
+'''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {'colorscheme': 'gotham'}
+'''
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+hook_add = '''
+    autocmd FileType ruby setlocal commentstring=$\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+'''
+
+# ___Color scheme___ {{{
+
+[[plugins]]
+repo = 'Dru89/vim-adventurous'
+
+[[plugins]]
+repo = 'gosukiwi/vim-atom-dark'
+
+[[plugins]]
+repo = 'whatyouhide/vim-gotham'
+
+[[plugins]]
+repo = 'vim-scripts/newspaper.vim'
+
+[[plugins]]
+repo = 'beigebrucewayne/skull-vim'
+
+[[plugins]]
+repo = 'mhartington/oceanic-next'
+
+# }}}
+
+
+# }}}
